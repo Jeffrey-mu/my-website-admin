@@ -1,7 +1,7 @@
 import { defHttp } from '/@/utils/http/axios';
 
 enum Api {
-  getToolsList = '/tools',
+  getToolsList = '/api/tools',
 }
 
 /**

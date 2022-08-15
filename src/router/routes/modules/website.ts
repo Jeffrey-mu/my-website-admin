@@ -32,11 +32,11 @@ const dashboard: AppRouteModule = {
       },
     },
     {
-      path: 'learning',
-      name: 'learning',
-      component: () => import('/@/views/website/learning/index.vue'),
+      path: 'resource',
+      name: 'resource',
+      component: () => import('/@/views/website/resource/index.vue'),
       meta: {
-        title: t('routes.website.learning'),
+        title: t('routes.website.resource'),
       },
     },
   ],

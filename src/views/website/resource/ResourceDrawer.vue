@@ -24,11 +24,12 @@
 <script lang="ts">
   import { defineComponent, ref, computed, unref } from 'vue';
   import { BasicForm, useForm } from '/@/components/Form/index';
-  import { formSchema } from './role.data';
+  import { formSchema } from './resource.data';
   import { BasicDrawer, useDrawerInner } from '/@/components/Drawer';
   import { BasicTree, TreeItem } from '/@/components/Tree';
 
   import { getMenuList } from '/@/api/demo/system';
+  import { addResource } from '/@/api/website/resource';
 
   export default defineComponent({
     name: 'RoleDrawer',
@@ -68,7 +69,7 @@
           const values = await validate();
           setDrawerProps({ confirmLoading: true });
           // TODO custom api
-          console.log(values);
+          addResource(values);
           closeDrawer();
           emit('success');
         } finally {

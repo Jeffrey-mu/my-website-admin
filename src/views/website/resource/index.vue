@@ -33,12 +33,12 @@
   import { defineComponent } from 'vue';
 
   import { BasicTable, useTable, TableAction } from '/@/components/Table';
-  import { getRoleListByPage } from '/@/api/demo/system';
+  import { getResourceList } from '/@/api/website/resource';
 
   import { useDrawer } from '/@/components/Drawer';
-  import RoleDrawer from './RoleDrawer.vue';
+  import RoleDrawer from './ResourceDrawer.vue';
 
-  import { columns, searchFormSchema } from './role.data';
+  import { columns, searchFormSchema } from './resource.data';
 
   export default defineComponent({
     name: 'RoleManagement',
@@ -47,7 +47,7 @@
       const [registerDrawer, { openDrawer }] = useDrawer();
       const [registerTable, { reload }] = useTable({
         title: '工具推荐',
-        api: getRoleListByPage,
+        api: getResourceList,
         columns,
         formConfig: {
           labelWidth: 120,
